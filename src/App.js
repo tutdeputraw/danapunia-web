@@ -1,10 +1,6 @@
-import Dashboard from './modules/dashboard/Dashboard';
 import React from "react";
+import { AppRoutes } from "./routes/AppRoute";
 
-export function App() {
-  return (
-    <div>
-      <Dashboard />
-    </div>
-  );
+export const App = () => {
+  return (<AppRoutes />);
 }
