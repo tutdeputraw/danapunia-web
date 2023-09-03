@@ -11,8 +11,13 @@ import { ProfilePage } from "../../profile/profile/ProfilePage"
 import { HomePendharmaPuniaPage } from "../../home/pendharma_punia/HomePendharmaPuniaPage"
 import { SearchPendharmaPuniaPage } from "../../search/pendharma_punia/searchPendharmaPunia"
 import { ProfilePendharmaPuniaPage } from "../../profile/pendharma_punia/ProfilePendharmaPuniaPage"
+import { useEffect } from "react"
 
 export const DashboardPendharmaPuniaPage = () => {
+    useEffect(() => {
+        MobxRootStore.dashboardTabbarPendharmaPuniaStore.updateCurrentIndex(0);
+    }, []);
+
     return (<div>
         <DashboardComponent
             dashboardTabBarStore={MobxRootStore.dashboardTabbarPendharmaPuniaStore}

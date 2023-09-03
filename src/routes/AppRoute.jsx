@@ -12,6 +12,7 @@ import { DashboardOrganizationAdminPage } from '../modules/dashboard/organizatio
 import { AuthPage } from '../modules/auth/auth/AuthPage';
 import AuthStore from '../modules/auth/auth/AuthStore';
 import { ProtectedComponent } from './protected/ProtectedComponent';
+import { RootPage } from '../modules/root/RootPage';
 
 export const AppRoutes = () => {
     return (
@@ -19,7 +20,8 @@ export const AppRoutes = () => {
             <Routes>
                 <Route
                     path="/"
-                    element={<Navigate to={routeDashboardPendharmaPunia} />}
+                    // element={<Navigate to={routeDashboardPendharmaPunia} />}
+                    element={<RootPage />}
                 />
                 <Route
                     path="*"
@@ -53,7 +55,7 @@ export const AppRoutes = () => {
                     element={<PuniaDetailPage />}
                 />
 
-                <Route
+                {/* <Route
                     exact
                     path={routeDashboardPendharmaPunia}
                     element={<DashboardPendharmaPuniaPage />}
@@ -62,7 +64,7 @@ export const AppRoutes = () => {
                     exact
                     path={routeDashboardOrganizationAdmin}
                     element={<ProtectedComponent Component={DashboardOrganizationAdminPage} />}
-                />
+                /> */}
             </Routes>
         </Router>
     );

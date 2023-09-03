@@ -11,8 +11,13 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { HomeOrganizationAdminPage } from "../../home/organization_admin/HomeOrganizationAdminPage"
 import { SearchOrganizationAdminPage } from "../../search/organization_admin/SearchOrganizationAdmin"
 import { ProfileOrganizationAdminPage } from "../../profile/organization_admin/ProfileOrganizationAdminPage"
+import { useEffect } from "react"
 
 export const DashboardOrganizationAdminPage = () => {
+    useEffect(() => {
+        MobxRootStore.dashboardTabbarOrganizationAdminStore.updateCurrentIndex(0);
+    }, []);
+
     return (<div>
         <DashboardComponent
             dashboardTabBarStore={MobxRootStore.dashboardTabbarPendharmaPuniaStore}
