@@ -2,7 +2,7 @@ import { observer } from "mobx-react";
 
 export const DashboardComponent = observer(({ dashboardTabBarStore, pages }) => {
     return (
-        <div>
+        <div >
             {pages[dashboardTabBarStore.currentIndex]}
         </div>
     );

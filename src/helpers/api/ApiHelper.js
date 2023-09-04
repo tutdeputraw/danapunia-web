@@ -24,6 +24,8 @@ const createQueryString = params => {
     return queryString.length > 0 ? `?${queryString}` : '';
 }
 
+
+
 export const APIGetHelper = async ({ endpoint, token, params, data }) => {
     const url = `${endpoint}${createQueryString(params)}`;
     console.log('url:', url);
@@ -31,7 +33,7 @@ export const APIGetHelper = async ({ endpoint, token, params, data }) => {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token ?? AuthStore.token,
+            'Authorization': token ?? AuthStore.tokenWithBearer,
         },
         body: JSON.stringify(data),
     };
@@ -46,12 +48,13 @@ export const APIGetHelper = async ({ endpoint, token, params, data }) => {
 }
 
 export const APIPostHelper = async ({ endpoint, token, params, data }) => {
+    console.log('apaansih:', AuthStore.tokenWithBearer);
     const url = `${endpoint}${createQueryString(params)}`;
     const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token ?? AuthStore.token,
+            'Authorization': token ?? AuthStore.tokenWithBearer,
         },
         body: JSON.stringify(data),
     };
@@ -71,7 +74,7 @@ export const APIPutHelper = async ({ endpoint, token, params, data }) => {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token ?? AuthStore.token,
+            'Authorization': token ?? AuthStore.tokenWithBearer,
         },
         body: JSON.stringify(data),
     };
@@ -91,7 +94,7 @@ export const APIDeleteHelper = async ({ endpoint, token, params, data }) => {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token ?? AuthStore.token,
+            'Authorization': token ?? AuthStore.tokenWithBearer,
         },
         body: JSON.stringify(data),
     };

@@ -1,6 +1,5 @@
 import { BottomNavigationAction } from "@mui/material"
 import MobxRootStore from "../../../helpers/mobx/MobxRootStore"
-import { HomePage } from "../../home/home/HomePage"
 import { SearchPage } from "../../search/search/SearchPage"
 import { DashboardComponent } from "../dashboard/DashboardComponent"
 import { DashboardTabBarComponent } from "../dashboard/tab_bar/DashboardTabBarComponent"

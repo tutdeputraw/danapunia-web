@@ -1,12 +1,15 @@
 import { Box } from "@mui/material"
 import { ProfileButtonComponent } from "../components/button"
 import AuthStore from "../../auth/auth/AuthStore"
-import { useNavigate } from "react-router-dom"
 
 export const ProfileOrganizationAdminPage = () => {
     const signOutOnClicked = () => {
         AuthStore.signOut();
         window.location.reload();
+    }
+
+    const logUser = async () => {
+        console.log('AuthStore.user:', AuthStore.user.organizationAdmin.Organization.name);
     }
 
     return (
@@ -21,6 +24,10 @@ export const ProfileOrganizationAdminPage = () => {
             <ProfileButtonComponent
                 name={'Sign Out'}
                 onclick={signOutOnClicked}
+            />
+            <ProfileButtonComponent
+                name={'user'}
+                onclick={logUser}
             />
         </Box>
     )

@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 class AuthStore {
     user = null;
     token = Cookies.get(AUTH_CONSTANT_TOKEN_KEY);
+    tokenWithBearer = `Bearer ${Cookies.get(AUTH_CONSTANT_TOKEN_KEY)}`;
 
     constructor() {
         makeObservable(this, {
@@ -46,7 +47,7 @@ class AuthStore {
             return false;
         }
         if (!this.user) {
-            this.user = await APIGetUserByToken(this.token);
+            this.setUser(await APIGetUserByToken(this.token));
         }
         return true;
     }

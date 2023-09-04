@@ -1,22 +1,14 @@
 import { APIGetHelper, APIHelperFetchDataAPI, APIPostHelper } from "../helpers/api/ApiHelper";
+import AuthStore from "../modules/auth/auth/AuthStore";
 
 // import { APIHelperFetchWithErrorHandler } from "../helpers/api/api.helper";
 export const APISignIn = async ({ email, password }) => {
-    const url = `/auth/sign-in`;
-    // const options = {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({ email, password }),
-    // };
-
     try {
-        // const responseData = await APIHelperFetchWithErrorHandler(url, options);
         const responseData = await APIPostHelper({
             endpoint: '/auth/sign-in',
             data: { email, password },
         });
+        console.log('apasih:', responseData);
         return responseData;
     } catch (error) {
         console.error('Error signIn:', error);
@@ -25,11 +17,25 @@ export const APISignIn = async ({ email, password }) => {
 }
 
 export const APIGetUserByToken = async token => {
-    console.log(token);
     try {
         const responseData = await APIGetHelper({
             endpoint: `/users/byToken`,
             params: { token }
+        })
+        console.log('responseData', responseData);
+        return responseData;
+    } catch (error) {
+        console.error('Error getUserByToken:', error);
+        throw error;
+    }
+}
+
+export const APIGetPuniaList = async (filters) => {
+    try {
+        console.log('AuthStore.token::::', AuthStore.token);
+        const responseData = await APIGetHelper({
+            endpoint: `/program`,
+            params: { filters },
         })
         console.log('responseData', responseData);
         return responseData;
