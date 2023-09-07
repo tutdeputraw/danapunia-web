@@ -9,12 +9,10 @@ export const RootPage = () => {
     const [role, setRole] = useState(null);
 
     useEffect(() => {
+        const getUserRole = async () => setRole(await AuthStore.getUserRole());
         getUserRole();
     }, [])
 
-    const getUserRole = async () => {
-        setRole(await AuthStore.getUserRole());
-    }
 
     switch (role) {
         case AUTH_CONSTANT_ROLE_ORGANIZATION_ADMIN:

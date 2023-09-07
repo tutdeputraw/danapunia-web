@@ -1,0 +1,29 @@
+.app-container {
+    position: relative;
+    /* Ensure relative positioning for the parent container */
+    height: 100vh;
+    /* Set a height for the parent container, adjust as needed */
+}
+
+.dashboard-container {
+    position: absolute;
+    /* Position the DashboardComponent absolutely */
+    top: 0;
+    /* Place it at the top */
+    left: 0;
+    right: 0;
+    bottom: auto;
+    background-color: red;
+    /* Ensure it doesn't cover the tab bar */
+}
+
+.tabbar-container {
+    position: absolute;
+    /* Position the DashboardTabBarComponent absolutely */
+    bottom: 0;
+    /* Place it at the bottom */
+    left: 0;
+    right: 0;
+    top: auto;
+    /* Ensure it doesn't overlap with the dashboard component */
+}

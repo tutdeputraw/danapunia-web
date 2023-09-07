@@ -1,7 +1,5 @@
-import { BottomNavigationAction } from "@mui/material"
+import { BottomNavigationAction, Box } from "@mui/material"
 import MobxRootStore from "../../../helpers/mobx/MobxRootStore"
-import { ProfilePage } from "../../profile/profile/ProfilePage"
-import { SearchPage } from "../../search/search/SearchPage"
 import { DashboardComponent } from "../dashboard/DashboardComponent"
 import { DashboardTabBarComponent } from "../dashboard/tab_bar/DashboardTabBarComponent"
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';

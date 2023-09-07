@@ -1,18 +1,15 @@
 
 import { BrowserRouter as Router, Routes, Route, redirect, Navigate } from 'react-router-dom';
 import { Error404NotFound } from '../helpers/errors/error.404';
-import { routeAuthSignIn, routeAuthSignUpOrganizationAdmin, routeAuthSignUpPendharmaPunia, routeDashboardOrganizationAdmin, routeDashboardPendharmaPunia, routePunia, routePuniaDetail } from './AppRouteName';
+import { routeAuthSignIn, routeAuthSignUpOrganizationAdmin, routeAuthSignUpPendharmaPunia, routeDashboardOrganizationAdmin, routeDashboardPendharmaPunia, routePunia, routePuniaCreate, routePuniaDetail } from './AppRouteName';
 import { SignInPage } from '../modules/auth/sign_in/SignInPage';
 import { SignUpPendharmaPuniaPage } from '../modules/auth/sign_up/pendharma_punia/SignUpPendharmaPuniaPage';
 import { SignUpOrganizationAdminPage } from '../modules/auth/sign_up/organization_admin/SignUpOrganizationAdminPage';
-import { PuniaListPage } from '../modules/punia/list/PuniaListPage';
-import { PuniaDetailPage } from '../modules/punia/detail/PuniaDetailPage';
-import { DashboardPendharmaPuniaPage } from '../modules/dashboard/pendharma_punia/DashboardPendharmaPuniaPage';
-import { DashboardOrganizationAdminPage } from '../modules/dashboard/organization_admin/DashboardOrganizationAdminPage';
+import { PuniaListPage } from '../modules/punia/list/list/PuniaListPage';
+import { PuniaDetailPage } from '../modules/punia/detail/detail/PuniaDetailPage';
 import { AuthPage } from '../modules/auth/auth/AuthPage';
-import AuthStore from '../modules/auth/auth/AuthStore';
-import { ProtectedComponent } from './protected/ProtectedComponent';
 import { RootPage } from '../modules/root/RootPage';
+import { PuniaCreateOrganizationAdmin } from '../modules/punia/create/organization_admin/PuniaCreateOrganizationAdmin';
 
 export const AppRoutes = () => {
     return (
@@ -53,6 +50,11 @@ export const AppRoutes = () => {
                     exact
                     path={routePuniaDetail}
                     element={<PuniaDetailPage />}
+                />
+                <Route
+                    exact
+                    path={routePuniaCreate}
+                    element={<PuniaCreateOrganizationAdmin />}
                 />
 
                 {/* <Route
