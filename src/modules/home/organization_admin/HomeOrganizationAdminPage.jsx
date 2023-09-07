@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import { PuniaListOrganizationAdminPage } from "../../punia/list/organization_admin/PuniaListOrganizationAdminPage";
 import { useNavigate } from "react-router-dom";
-import { PuniaCreateOrganizationAdmin } from "../../punia/create/organization_admin/PuniaCreateOrganizationAdmin";
+import { PuniaCreateOrganizationAdminPage } from "../../punia/create/organization_admin/PuniaCreateOrganizationAdminPage";
 import { routePuniaCreate } from "../../../routes/AppRouteName";
 
 export const HomeOrganizationAdminPage = () => {

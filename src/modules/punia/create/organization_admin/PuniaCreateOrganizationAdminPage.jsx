@@ -1,4 +1,4 @@
-export const PuniaCreateOrganizationAdmin = () => {
+export const PuniaCreateOrganizationAdminPage = () => {
     return (<div>
         PuniaCreateOrganizationAdmin
     </div>);

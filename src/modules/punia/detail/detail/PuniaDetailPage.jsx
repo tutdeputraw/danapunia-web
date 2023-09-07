@@ -2,8 +2,8 @@ import AuthStore from "../../../auth/auth/AuthStore";
 import { useEffect, useState } from "react";
 import { LoadingComponent } from "../../../../components/LoadingComponent";
 import { AUTH_CONSTANT_ROLE_ORGANIZATION_ADMIN, AUTH_CONSTANT_ROLE_PENDHARMA_PUNIA } from "../../../auth/constants/AuthConstant";
-import { PuniaDetailOrganizationAdmin } from "../organization_admin/PuniaDetailOrganizationAdmin";
-import { PuniaDetailPendharmaPunia } from "../pendharma_punia/PuniaDetailPendharmaPunia";
+import { PuniaDetailOrganizationAdminPage } from "../organization_admin/PuniaDetailOrganizationAdminPage";
+import { PuniaDetailPendharmaPuniaPage } from "../pendharma_punia/PuniaDetailPendharmaPuniaPage";
 
 export const PuniaDetailPage = () => {
     const [role, setRole] = useState(null);
@@ -16,9 +16,9 @@ export const PuniaDetailPage = () => {
 
     switch (role) {
         case AUTH_CONSTANT_ROLE_ORGANIZATION_ADMIN:
-            return <PuniaDetailOrganizationAdmin />
+            return <PuniaDetailOrganizationAdminPage />
         case AUTH_CONSTANT_ROLE_PENDHARMA_PUNIA:
-            return <PuniaDetailPendharmaPunia />
+            return <PuniaDetailPendharmaPuniaPage />
         default:
             return <LoadingComponent />;
     }

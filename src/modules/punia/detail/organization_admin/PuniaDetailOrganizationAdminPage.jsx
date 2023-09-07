@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-export const PuniaDetailOrganizationAdmin = () => {
+export const PuniaDetailOrganizationAdminPage = () => {
     const { id } = useParams();
     return (
         <div>

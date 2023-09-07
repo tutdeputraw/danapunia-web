@@ -9,7 +9,7 @@ import { PuniaListPage } from '../modules/punia/list/list/PuniaListPage';
 import { PuniaDetailPage } from '../modules/punia/detail/detail/PuniaDetailPage';
 import { AuthPage } from '../modules/auth/auth/AuthPage';
 import { RootPage } from '../modules/root/RootPage';
-import { PuniaCreateOrganizationAdmin } from '../modules/punia/create/organization_admin/PuniaCreateOrganizationAdmin';
+import { PuniaCreateOrganizationAdminPage } from '../modules/punia/create/organization_admin/PuniaCreateOrganizationAdminPage';
 
 export const AppRoutes = () => {
     return (
@@ -54,7 +54,7 @@ export const AppRoutes = () => {
                 <Route
                     exact
                     path={routePuniaCreate}
-                    element={<PuniaCreateOrganizationAdmin />}
+                    element={<PuniaCreateOrganizationAdminPage />}
                 />
 
                 {/* <Route
